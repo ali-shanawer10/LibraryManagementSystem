@@ -1,6 +1,9 @@
 package com.example.librarymanagementsystem;
 
+import com.example.librarymanagementsystem.utils.BookHelper;
+import com.example.librarymanagementsystem.utils.BorrowRecordHelper;
 import com.example.librarymanagementsystem.utils.DBHelper;
+import com.example.librarymanagementsystem.utils.UserHelper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,10 +23,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        DBHelper.insertUser("Ali", "Shanawer", "alishanawer@example.com", "123 Main St Karachi");
-
-        DBHelper.insertBook("Atomic Habits", "James Clear");
-
-        DBHelper.insertBorrowRecord(1, 1, "2024-12-03");
     }
 }
