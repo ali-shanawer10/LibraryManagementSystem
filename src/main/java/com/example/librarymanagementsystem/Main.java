@@ -11,9 +11,11 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Dashboard.fxml"));
         Parent root = loader.load();
         SceneNavigator.initialize(primaryStage);
+        primaryStage.setMaximized(true);
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Library Management System");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

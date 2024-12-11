@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import com.example.librarymanagementsystem.utils.SceneNavigator;
 
-public class UsersController {
+public class AllBooksController {
 
     @FXML
     private Button backButton;

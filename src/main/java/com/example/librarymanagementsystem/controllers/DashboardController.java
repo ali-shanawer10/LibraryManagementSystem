@@ -1,17 +1,17 @@
 package com.example.librarymanagementsystem.controllers;
 import com.example.librarymanagementsystem.utils.SceneNavigator;
 
-public class MainMenuController {
+public class DashboardController {
     public void handleManageBooks() {
-        SceneNavigator.loadScene("Books.fxml");
+        SceneNavigator.loadScene("AllBooks.fxml");
     }
 
     public void handleManageUsers() {
-        SceneNavigator.loadScene("Users.fxml");
+        SceneNavigator.loadScene("AllMembers.fxml");
     }
 
     public void handleBorrowReturn() {
-        SceneNavigator.loadScene("BorrowRecords.fxml");
+        SceneNavigator.loadScene("IssueBook.fxml");
     }
 
     public void handleExit() {

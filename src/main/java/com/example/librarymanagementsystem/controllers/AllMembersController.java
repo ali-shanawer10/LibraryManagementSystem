@@ -1,11 +1,12 @@
 package com.example.librarymanagementsystem.controllers;
 
-import com.example.librarymanagementsystem.utils.SceneNavigator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import com.example.librarymanagementsystem.utils.SceneNavigator;
 
-public class BorrowRecordsController {
+public class AllMembersController {
+
     @FXML
     private Button backButton;
 

@@ -30,7 +30,7 @@ public class SceneNavigator {
 
     // Method to go back to the main menu
     public static void goToMainMenu() {
-        loadScene("MainMenu.fxml");
+        loadScene("Dashboard.fxml");
     }
 
     public static void Exit(){
