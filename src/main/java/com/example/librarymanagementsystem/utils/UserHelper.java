@@ -1,24 +1,36 @@
 package com.example.librarymanagementsystem.utils;
 
+import com.example.librarymanagementsystem.models.Book;
+import com.example.librarymanagementsystem.models.Member;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 
 public class UserHelper {
 
     // Method to get all users
-    public static void getAllUsers() {
+    public static ObservableList<Member> getAllUsers() {
         String sql = "SELECT * FROM Users";
+        ObservableList<Member> members = FXCollections.observableArrayList();
+
         try (Connection conn = DBHelper.connect(); Statement statement = conn.createStatement(); ResultSet rs = statement.executeQuery(sql)) {
             System.out.println("Users:");
             while (rs.next()) {
-                System.out.println("ID: " + rs.getInt("ID") +
-                        ", First Name: " + rs.getString("FirstName") +
-                        ", Last Name: " + rs.getString("LastName") +
-                        ", Email: " + rs.getString("Email") +
-                        ", Address: " + rs.getString("Address"));
+                // Create a new Book object for each row in the result set
+                Member member = new Member(
+                        rs.getInt("ID"),
+                        rs.getString("FirstName"),
+                        rs.getString("LastName"),
+                        rs.getString("Email"),
+                        rs.getString("Address")
+                );
+                members.add(member);
             }
         } catch (SQLException e) {
             System.out.println("Error retrieving users: " + e.getMessage());
         }
+        return members;
     }
 
     // Method to add a user
