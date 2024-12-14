@@ -15,6 +15,10 @@ public class Member {
         this.address = address;
     }
 
+    public int getId(){
+        return id;
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -15,7 +15,6 @@ public class UserHelper {
         ObservableList<Member> members = FXCollections.observableArrayList();
 
         try (Connection conn = DBHelper.connect(); Statement statement = conn.createStatement(); ResultSet rs = statement.executeQuery(sql)) {
-            System.out.println("Users:");
             while (rs.next()) {
                 // Create a new Book object for each row in the result set
                 Member member = new Member(

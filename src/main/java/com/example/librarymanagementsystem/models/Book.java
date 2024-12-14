@@ -15,6 +15,13 @@ public class Book {
     }
 
     // Getters
+    public int getId(){
+        return id;
+    }
+
+    public boolean isAvailable(){
+        return availability.equals("Available");
+    }
     public String getTitle() {
         return title;
     }

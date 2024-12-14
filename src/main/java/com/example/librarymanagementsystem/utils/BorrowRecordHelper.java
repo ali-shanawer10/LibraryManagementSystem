@@ -21,25 +21,35 @@ public class BorrowRecordHelper {
         }
     }
 
-    // Method to add a borrow record
     public static boolean insertBorrowRecord(int bookID, int userID, String issueDate) {
-        String sql = "INSERT INTO BorrowRecords (BookID, UserID, IssueDate) VALUES (?, ?, ?)";
+        String insertSQL = "INSERT INTO BorrowRecords (BookID, UserID, IssueDate) VALUES (?, ?, ?)";
+        String updateSQL = "UPDATE Books SET Availability = 'Unavailable' WHERE id = ?";  // Update the availability status of the book
 
-        try (Connection conn = DBHelper.connect(); PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
-            preparedStatement.setInt(1, bookID);  // Set BookID
-            preparedStatement.setInt(2, userID);  // Set UserID
-            preparedStatement.setString(3, issueDate);  // Set IssueDate
+        try (Connection conn = DBHelper.connect();
+             PreparedStatement insertStatement = conn.prepareStatement(insertSQL);
+             PreparedStatement updateStatement = conn.prepareStatement(updateSQL)) {
 
-            int rowsAffected = preparedStatement.executeUpdate();  // Execute the insert
+            // Insert the borrow record
+            insertStatement.setInt(1, bookID);  // Set BookID
+            insertStatement.setInt(2, userID);  // Set UserID
+            insertStatement.setString(3, issueDate);  // Set IssueDate
+
+            int rowsAffected = insertStatement.executeUpdate();  // Execute the insert
             if (rowsAffected > 0) {
-                System.out.println("Borrow record inserted successfully.");
-                return true;
+                // If borrow record insertion is successful, update the book availability
+                updateStatement.setInt(1, bookID);  // Set BookID for the update query
+                int rowsUpdated = updateStatement.executeUpdate();  // Execute the update
+
+                if (rowsUpdated > 0) {
+                    return true;  // Return true if both insert and update are successful
+                }
             }
         } catch (SQLException e) {
-            System.out.println("Error inserting borrow record: " + e.getMessage());
+            System.out.println("Error inserting borrow record or updating book availability: " + e.getMessage());
         }
-        return false;
+        return false;  // Return false if there was an error
     }
+
 
     // Method to remove a borrow record
     public static boolean removeBorrowRecordById(int recordId) {
