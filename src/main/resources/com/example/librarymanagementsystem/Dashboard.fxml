@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="top_center" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystem.controllers.DashboardController">
-        <Label alignment="CENTER" prefHeight="167.0" prefWidth="1600.0" style="-fx-background-color: #3a4c5c; -fx-text-fill: #aebbc3;" text="Library System" textAlignment="JUSTIFY" wrapText="true">
+<VBox alignment="top_center" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystem.controllers.DashboardController">
+        <Label alignment="CENTER" prefHeight="150.0" prefWidth="1366.0" style="-fx-background-color: #3a4c5c; -fx-text-fill: #aebbc3;" text="Library System" textAlignment="JUSTIFY" wrapText="true">
                 <font>
                         <Font name="Lucida Handwriting Italic" size="70.0" />
                 </font>
@@ -25,7 +25,7 @@
                 </padding>
         </Label>
         <!-- GridPane for buttons -->
-        <GridPane alignment="CENTER" hgap="50.0" prefHeight="725.0" prefWidth="1600.0" style="-fx-background-color: #aebbc3;" vgap="10.0" VBox.vgrow="ALWAYS">
+        <GridPane alignment="CENTER" hgap="50.0" prefHeight="700.0" prefWidth="1366.0" style="-fx-background-color: #aebbc3;" vgap="10.0" VBox.vgrow="ALWAYS">
                 <columnConstraints>
          <ColumnConstraints />
                 </columnConstraints>
@@ -37,7 +37,7 @@
                         <RowConstraints />
                         <RowConstraints />
                 </rowConstraints>
-      <Button layoutX="685.0" layoutY="287.0" onAction="#handleAllBooksClick" prefHeight="100.0" prefWidth="960.0" style="-fx-background-color: #d3d6d8; -fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold; -fx-background-radius: 40;">
+      <Button layoutX="685.0" layoutY="287.0" onAction="#handleAllBooksClick" prefHeight="80.0" prefWidth="960.0" style="-fx-background-color: #d3d6d8; -fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold; -fx-background-radius: 40;">
          <graphic>
              <VBox alignment="CENTER">
                  <Label style="-fx-text-fill: #3a4c5c; -fx-font-size: 40; -fx-font-style: italic;" text="ALL BOOKS">

@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="top_center" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystem.controllers.AddBookController">
+<VBox alignment="top_center" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystem.controllers.AddBookController">
     <Label alignment="CENTER" prefHeight="203.0" prefWidth="1600.0" style="-fx-background-color: #3a4c5c; -fx-text-fill: #aebbc3;" text="Add Book" textAlignment="JUSTIFY" wrapText="true">
         <font>
             <Font name="Lucida Handwriting Italic" size="70.0" />
@@ -24,20 +24,20 @@
             <Insets bottom="20.0" left="20.0" top="20.0" />
         </padding>
     </Label>
-    <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #aebbc3;">
-      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#d3d6d8" height="166.0" layoutX="440.0" layoutY="353.0" stroke="#d3d6d8" strokeType="INSIDE" width="721.0" />
-      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#d3d6d8" height="166.0" layoutX="440.0" layoutY="163.0" stroke="#d3d6d8" strokeType="INSIDE" width="721.0" />
-        <Label layoutX="522.0" layoutY="217.0" style="-fx-text-fill: #3a4c5c; -fx-font-size: 40px; -fx-font-weight: bold; -fx-font-style: italic;" text="TITLE">
+    <AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #aebbc3;">
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#d3d6d8" height="166.0" layoutX="323.0" layoutY="250.0" stroke="#d3d6d8" strokeType="INSIDE" width="721.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#d3d6d8" height="166.0" layoutX="323.0" layoutY="60.0" stroke="#d3d6d8" strokeType="INSIDE" width="721.0" />
+        <Label layoutX="405.0" layoutY="114.0" style="-fx-text-fill: #3a4c5c; -fx-font-size: 40px; -fx-font-weight: bold; -fx-font-style: italic;" text="TITLE">
             <font>
                 <Font name="Arial Narrow Bold" size="31.0" />
             </font>
         </Label>
-        <Label layoutX="489.0" layoutY="407.0" style="-fx-text-fill: #3a4c5c; -fx-font-size: 40px; -fx-font-weight: bold; -fx-font-style: italic;" text="AUTHOR">
+        <Label layoutX="372.0" layoutY="304.0" style="-fx-text-fill: #3a4c5c; -fx-font-size: 40px; -fx-font-weight: bold; -fx-font-style: italic;" text="AUTHOR">
             <font>
                 <Font name="Arial Narrow Bold" size="31.0" />
             </font>
         </Label>
-        <Button fx:id="backbutton" layoutX="838.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="145.0" style="-fx-background-radius: 40; -fx-background-color: #d3d6d8; -fx-border-radius: 40; -fx-text-fill: #3a4c5c;" text="BACK" textAlignment="CENTER">
+        <Button fx:id="backbutton" layoutX="737.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="145.0" style="-fx-background-radius: 40; -fx-background-color: #d3d6d8; -fx-border-radius: 40; -fx-text-fill: #3a4c5c;" text="BACK" textAlignment="CENTER">
             <font>
                 <Font name="Arial Narrow Bold" size="18.0" />
             </font>
@@ -45,7 +45,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="Add" layoutX="1000.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="45.0" prefWidth="145.0" style="-fx-background-radius: 40; -fx-background-color: #d3d6d8; -fx-border-radius: 40; -fx-text-fill: #3a4c5c;" text="ADD" textAlignment="CENTER">
+        <Button fx:id="Add" layoutX="899.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="45.0" prefWidth="145.0" style="-fx-background-radius: 40; -fx-background-color: #d3d6d8; -fx-border-radius: 40; -fx-text-fill: #3a4c5c;" text="ADD" textAlignment="CENTER">
             <font>
                 <Font name="Arial Narrow Bold" size="18.0" />
             </font>
@@ -53,11 +53,11 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField fx:id="titleField" layoutX="686.0" layoutY="200.0" prefHeight="92.0" prefWidth="452.0" style="-fx-background-radius: 30; -fx-background-color: #aebbc3; -fx-text-fill: #3a4c5c; -fx-font-size: 24px; -fx-alignment: center;">
+        <TextField fx:id="titleField" layoutX="569.0" layoutY="97.0" prefHeight="92.0" prefWidth="452.0" style="-fx-background-radius: 30; -fx-background-color: #aebbc3; -fx-text-fill: #3a4c5c; -fx-font-size: 24px; -fx-alignment: center;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-        <TextField fx:id="authorField" layoutX="686.0" layoutY="390.0" prefHeight="92.0" prefWidth="452.0" style="-fx-background-radius: 30; -fx-background-color: #aebbc3; -fx-text-fill: #3a4c5c; -fx-font-size: 24px; -fx-alignment: center;">
+        <TextField fx:id="authorField" layoutX="569.0" layoutY="287.0" prefHeight="92.0" prefWidth="452.0" style="-fx-background-radius: 30; -fx-background-color: #aebbc3; -fx-text-fill: #3a4c5c; -fx-font-size: 24px; -fx-alignment: center;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
