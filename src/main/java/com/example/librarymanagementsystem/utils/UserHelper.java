@@ -16,7 +16,6 @@ public class UserHelper {
 
         try (Connection conn = DBHelper.connect(); Statement statement = conn.createStatement(); ResultSet rs = statement.executeQuery(sql)) {
             while (rs.next()) {
-                // Create a new Book object for each row in the result set
                 Member member = new Member(
                         rs.getInt("ID"),
                         rs.getString("FirstName"),
@@ -42,7 +41,7 @@ public class UserHelper {
             preparedStatement.setString(3, email);
             preparedStatement.setString(4, address);
 
-            int rowsAffected = preparedStatement.executeUpdate();  // Execute the insert
+            int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("User added successfully.");
                 return true;
@@ -62,7 +61,6 @@ public class UserHelper {
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);
              PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
 
-            // Check if the user exists
             checkStmt.setInt(1, userId);
             ResultSet rs = checkStmt.executeQuery();
 
@@ -71,7 +69,6 @@ public class UserHelper {
                 return false;
             }
 
-            // If exists, delete the user
             deleteStmt.setInt(1, userId);
             int rowsAffected = deleteStmt.executeUpdate();
             if (rowsAffected > 0) {

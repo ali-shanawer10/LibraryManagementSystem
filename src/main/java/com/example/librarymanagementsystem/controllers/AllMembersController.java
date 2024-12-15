@@ -21,7 +21,6 @@ public class AllMembersController {
 
     @FXML
     public void handleBackButton(ActionEvent event) {
-        // Navigate back to the main menu
         SceneNavigator.goToMainMenu();
     }
 
@@ -47,16 +46,13 @@ public class AllMembersController {
 
     @FXML
     public void initialize() {
-        // Configure table columns
         fname.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         lname.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
         address.setCellValueFactory(new PropertyValueFactory<>("address"));
 
-        // Load data into the table
         memberList = getAllUsers();
 
-        // Add search functionality
         searchbar.textProperty().addListener((observable, oldValue, newValue) -> searchMembers(newValue));
 
         tableview.setItems(memberList);

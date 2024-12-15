@@ -40,23 +40,18 @@ public class AllBooksController {
 
     @FXML
     public void handleBackButton(ActionEvent event) {
-        // Navigate back to the main menu
         SceneNavigator.goToMainMenu();
     }
 
     public void initialize() {
-        // Set up columns
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
         author.setCellValueFactory(new PropertyValueFactory<>("author"));
         avail.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
-        // Add sample data
         bookList = getAllBooks();
 
-        // Add search functionality
         searchbar.textProperty().addListener((observable, oldValue, newValue) -> searchMembers(newValue));
 
-        // Bind data to TableView
         tableview.setItems(bookList);
     }
 

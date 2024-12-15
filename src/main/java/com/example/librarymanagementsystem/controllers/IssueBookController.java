@@ -121,8 +121,8 @@ public class IssueBookController {
             selectedBook = bookListView.getSelectionModel().getSelectedItem();
             if (selectedBook != null) {
                 bookSearch.setText(selectedBook.getTitle());  // Set Book Title in the TextField
-                bookTitleLabel.setText("Title: " + selectedBook.getTitle());  // Set Book Title Label
-                bookAuthorLabel.setText("Author: " + selectedBook.getAuthor());  // Set Book Author Label
+                bookTitleLabel.setText(selectedBook.getTitle());  // Set Book Title Label
+                bookAuthorLabel.setText(selectedBook.getAuthor());  // Set Book Author Label
                 bookListView.setVisible(false);  // Hide ListView after selection
             }
         });
@@ -132,8 +132,8 @@ public class IssueBookController {
             selectedMember = memberListView.getSelectionModel().getSelectedItem();
             if (selectedMember != null) {
                 memberSearch.setText(selectedMember.getFirstName() + " " + selectedMember.getLastName());  // Set Member Full Name in the TextField
-                memberNameLabel.setText("Name: " + selectedMember.getFirstName() + " " + selectedMember.getLastName());  // Set Member Name Label
-                memberEmailLabel.setText("Email: " + selectedMember.getEmail());  // Set Member Email Label
+                memberNameLabel.setText(selectedMember.getFirstName() + " " + selectedMember.getLastName());  // Set Member Name Label
+                memberEmailLabel.setText(selectedMember.getEmail());  // Set Member Email Label
                 memberListView.setVisible(false);  // Hide ListView after selection
             }
         });
@@ -190,10 +190,10 @@ public class IssueBookController {
         selectedMember = null;
         bookSearch.clear();
         memberSearch.clear();
-        bookTitleLabel.setText("Title: ");
-        bookAuthorLabel.setText("Author: ");
-        memberNameLabel.setText("Name: ");
-        memberEmailLabel.setText("Email: ");
+        bookTitleLabel.setText("Book Title");
+        bookAuthorLabel.setText("Author Name");
+        memberNameLabel.setText("Member Name");
+        memberEmailLabel.setText("Member Email");
         bookListView.setVisible(false);
         memberListView.setVisible(false);
     }

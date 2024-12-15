@@ -6,7 +6,6 @@ public class Book {
     private String author;
     private String availability;
 
-    // Constructor
     public Book(int id, String title, String author, String availability) {
         this.id = id;
         this.title = title;
@@ -14,7 +13,6 @@ public class Book {
         this.availability = availability;
     }
 
-    // Getters
     public int getId(){
         return id;
     }

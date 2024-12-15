@@ -16,7 +16,6 @@ public class AddBookController {
     @FXML
     private TextField authorField;
 
-    // Method called when the "Add" button is clicked
     @FXML
     private void handleAddButton(ActionEvent event) {
         String title = titleField.getText().trim();
@@ -31,7 +30,6 @@ public class AddBookController {
             insertBook(title, author);
             showAlert(Alert.AlertType.INFORMATION, "Success", "Book added successfully!");
 
-            // Clear the fields after successful insertion
             titleField.clear();
             authorField.clear();
         } catch (Exception e) {
@@ -41,11 +39,9 @@ public class AddBookController {
 
     @FXML
     public void handleBackButton(ActionEvent event) {
-        // Navigate back to the main menu
         SceneNavigator.goToMainMenu();
     }
 
-    // Utility method to show alert dialogs
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);

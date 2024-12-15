@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -16,7 +17,9 @@ public class Main extends Application {
         SceneNavigator.initialize(primaryStage);
         primaryStage.setMaximized(true);
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Library Management System");
+        primaryStage.setTitle("");
+        Image icon = new Image(getClass().getResourceAsStream("Images/icon.png"));
+        primaryStage.getIcons().add(icon);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }

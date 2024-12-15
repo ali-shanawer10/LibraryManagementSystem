@@ -22,7 +22,6 @@ public class AddMemberController {
     @FXML
     private TextField addressField;
 
-    // Method called when the "Add" button is clicked
     @FXML
     private void handleAddButton(ActionEvent event) {
         String firstName = firstNameField.getText().trim();
@@ -39,7 +38,6 @@ public class AddMemberController {
             insertUser(firstName, lastName, email, address);
             showAlert(Alert.AlertType.INFORMATION, "Success", "Member added successfully!");
 
-            // Clear the fields after successful insertion
             firstNameField.clear();
             lastNameField.clear();
             emailField.clear();
@@ -51,11 +49,9 @@ public class AddMemberController {
 
     @FXML
     public void handleBackButton(ActionEvent event) {
-        // Navigate back to the main menu
         SceneNavigator.goToMainMenu();
     }
 
-    // Utility method to show alert dialogs
     private void showAlert(Alert.AlertType alertType, String title, String message) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);

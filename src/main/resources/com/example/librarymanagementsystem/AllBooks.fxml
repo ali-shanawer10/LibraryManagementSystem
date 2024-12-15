@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -13,39 +14,47 @@
 <?import javafx.scene.text.Font?>
 
 <VBox alignment="top_center" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.librarymanagementsystem.controllers.AllBooksController">
-     <!-- Full-width Label at the top -->
-    <Label alignment="CENTER" prefHeight="255.0" prefWidth="1600.0" style="-fx-background-color: #6c8495; -fx-text-fill: white; -fx-font-weight: bold;" text="All Books">
-         <font>
-             <Font size="40.0" />
-         </font>
-         <VBox.vgrow>
-            </VBox.vgrow>
-         <VBox.margin>
-             <Insets />
-         </VBox.margin>
-         <padding>
-             <Insets bottom="20.0" left="20.0" top="20.0" />
-         </padding>
-     </Label>
+    <Label alignment="CENTER" prefHeight="203.0" prefWidth="1600.0" style="-fx-background-color: #3a4c5c; -fx-text-fill: #aebbc3;" text="All Books" textAlignment="JUSTIFY" wrapText="true">
+        <font>
+            <Font name="Lucida Handwriting Italic" size="70.0" />
+        </font>
+        <VBox.vgrow>
+        </VBox.vgrow>
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+        <padding>
+            <Insets bottom="20.0" left="20.0" top="20.0" />
+        </padding>
+    </Label>
     <AnchorPane prefHeight="900.0" prefWidth="1600.0">
-        <Button fx:id="backbutton" layoutX="1369.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="145.0" text="BACK" textAlignment="CENTER">
+        <Button fx:id="backbutton" layoutX="1369.0" layoutY="66.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="45.0" prefWidth="145.0" style="-fx-background-radius: 40; -fx-background-color: #d3d6d8; -fx-border-radius: 40; -fx-text-fill: #3a4c5c;" text="BACK" textAlignment="CENTER">
             <font>
                 <Font name="Arial Narrow Bold" size="18.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <TableView fx:id="tableview" layoutX="87.0" layoutY="128.0" prefHeight="544.0" prefWidth="1427.0">
+        <TableView fx:id="tableview" layoutX="87.0" layoutY="128.0" prefHeight="544.0" prefWidth="1427.0" style="-fx-background-radius: 3; -fx-background-color: #d3d6d8;">
             <columns>
-                <TableColumn fx:id="title" prefWidth="704.0" text="TITLE" />
-                <TableColumn fx:id="author" prefWidth="444.0" text="AUTHOR" />
-                <TableColumn fx:id="avail" minWidth="0.0" prefWidth="277.0" text="AVAILABILITY" />
+                <TableColumn fx:id="title" prefWidth="602.0" text="TITLE" />
+                <TableColumn fx:id="author" prefWidth="476.0" text="AUTHOR" />
+                <TableColumn fx:id="avail" minWidth="0.0" prefWidth="325.0" text="AVAILABILITY" />
             </columns>
         </TableView>
-        <TextField fx:id="searchbar" layoutX="87.0" layoutY="66.0" prefHeight="45.0" prefWidth="1273.0" promptText="Search">
+        <TextField fx:id="searchbar" layoutX="87.0" layoutY="66.0" prefHeight="45.0" prefWidth="1273.0" promptText="Search" style="-fx-background-radius: 40; -fx-background-color: #3a4c5c; -fx-text-fill: #d3d6d8;">
             <font>
-                <Font name="Arial Narrow Bold" size="18.0" />
+                <Font name="Arial Bold" size="18.0" />
             </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
         </TextField>
-        <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="1313.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="1314.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@Images/search.png" />
         </ImageView>
     </AnchorPane>

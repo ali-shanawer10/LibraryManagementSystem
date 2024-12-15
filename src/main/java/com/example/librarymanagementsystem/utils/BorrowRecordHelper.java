@@ -23,31 +23,29 @@ public class BorrowRecordHelper {
 
     public static boolean insertBorrowRecord(int bookID, int userID, String issueDate) {
         String insertSQL = "INSERT INTO BorrowRecords (BookID, UserID, IssueDate) VALUES (?, ?, ?)";
-        String updateSQL = "UPDATE Books SET Availability = 'Unavailable' WHERE id = ?";  // Update the availability status of the book
+        String updateSQL = "UPDATE Books SET Availability = 'Unavailable' WHERE id = ?";
 
         try (Connection conn = DBHelper.connect();
              PreparedStatement insertStatement = conn.prepareStatement(insertSQL);
              PreparedStatement updateStatement = conn.prepareStatement(updateSQL)) {
 
-            // Insert the borrow record
-            insertStatement.setInt(1, bookID);  // Set BookID
-            insertStatement.setInt(2, userID);  // Set UserID
-            insertStatement.setString(3, issueDate);  // Set IssueDate
+            insertStatement.setInt(1, bookID);
+            insertStatement.setInt(2, userID);
+            insertStatement.setString(3, issueDate);
 
-            int rowsAffected = insertStatement.executeUpdate();  // Execute the insert
+            int rowsAffected = insertStatement.executeUpdate();
             if (rowsAffected > 0) {
-                // If borrow record insertion is successful, update the book availability
-                updateStatement.setInt(1, bookID);  // Set BookID for the update query
-                int rowsUpdated = updateStatement.executeUpdate();  // Execute the update
+                updateStatement.setInt(1, bookID);
+                int rowsUpdated = updateStatement.executeUpdate();
 
                 if (rowsUpdated > 0) {
-                    return true;  // Return true if both insert and update are successful
+                    return true;
                 }
             }
         } catch (SQLException e) {
             System.out.println("Error inserting borrow record or updating book availability: " + e.getMessage());
         }
-        return false;  // Return false if there was an error
+        return false;
     }
 
 
@@ -60,7 +58,6 @@ public class BorrowRecordHelper {
              PreparedStatement checkStmt = conn.prepareStatement(checkSql);
              PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
 
-            // Check if the borrow record exists
             checkStmt.setInt(1, recordId);
             ResultSet rs = checkStmt.executeQuery();
 
@@ -69,7 +66,6 @@ public class BorrowRecordHelper {
                 return false;
             }
 
-            // If exists, delete the borrow record
             deleteStmt.setInt(1, recordId);
             int rowsAffected = deleteStmt.executeUpdate();
             if (rowsAffected > 0) {

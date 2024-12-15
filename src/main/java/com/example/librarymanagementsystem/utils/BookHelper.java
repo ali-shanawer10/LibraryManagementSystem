@@ -17,7 +17,6 @@ public class BookHelper {
              ResultSet rs = statement.executeQuery(sql)) {
 
             while (rs.next()) {
-                // Create a new Book object for each row in the result set
                 Book book = new Book(
                         rs.getInt("ID"),
                         rs.getString("Title"),
@@ -40,45 +39,13 @@ public class BookHelper {
             preparedStatement.setString(1, title);
             preparedStatement.setString(2, author);
 
-            int rowsAffected = preparedStatement.executeUpdate();  // Execute the insert
+            int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Book added successfully.");
                 return true;
             }
         } catch (SQLException e) {
             System.out.println("Error adding book: " + e.getMessage());
-        }
-        return false;
-    }
-
-    // Method to remove a book
-    public static boolean removeBookById(int bookId) {
-        String checkSql = "SELECT * FROM Books WHERE ID = ?";
-        String deleteSql = "DELETE FROM Books WHERE ID = ?";
-
-        try (Connection conn = DBHelper.connect();
-             PreparedStatement checkStmt = conn.prepareStatement(checkSql);
-             PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
-
-            // Check if the book exists
-            checkStmt.setInt(1, bookId);
-            ResultSet rs = checkStmt.executeQuery();
-
-            if (!rs.next()) {
-                System.out.println("Book with ID " + bookId + " does not exist.");
-                return false;
-            }
-
-            // If exists, delete the book
-            deleteStmt.setInt(1, bookId);
-            int rowsAffected = deleteStmt.executeUpdate();
-            if (rowsAffected > 0) {
-                System.out.println("Book removed successfully.");
-                return true;
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Error removing book: " + e.getMessage());
         }
         return false;
     }
